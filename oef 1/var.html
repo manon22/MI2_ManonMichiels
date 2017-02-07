@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="nl">
+	<head>
+		<meta charset="utf-8" >
+		<meta name="description" content="beschrijving van de webpagina" >
+		<meta name="keywords" content="trefwoorden, gescheiden, door, komma's">
+        <meta name="viewport" content="width=device-width, height=device-height" />
+		<title>Eerste javascript</title>
+
+	</head>
+
+	<body>
+    <script type="text/javascript">
+        var uitkomst1 = 4 * 5 + 10;
+        var uitkomst2 = 4 * (5 + 10);
+        document.write('uitkomst 1:' + uitkomst1 + '<br>uitkomst 2 :' + uitkomst2);
+        
+        var waarde1 = 2;
+        var waarde2 = 3;
+        function plus() {
+            return waarde1 + waarde2;
+        }
+        function min() {
+            return waarde1 - waarde2;
+        }
+        function maal() {
+            return waarde1 * waarde2;
+        }
+        function delen() {
+            return waarde1 / waarde2;
+        }
+        document.write("<br> 2+3=" + plus());
+        document.write("<br> 2-3=" + min());
+        document.write("<br> 2*3=" + maal());
+        document.write("<br> 2/3=" + delen());
+        
+    </script>
+</body>
+</html>
