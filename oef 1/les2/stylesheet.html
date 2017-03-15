@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="nl">
+	<head>
+		<meta charset="utf-8" >
+		<meta name="description" content="beschrijving van de webpagina" >
+		<meta name="keywords" content="trefwoorden, gescheiden, door, komma's">
+        <meta name="viewport" content="width=device-width, height=device-height" />
+        <link rel="stylesheet" href="schaakbord.css">
+		<title>schaakbord</title>
+        
+	</head>
+
+	<body>
+        
+        
+        <script type="text/javascript">
+            
+            "use strict";
+            
+            var buitenVierkant = 0;
+            
+           while (buitenVierkant < 8)
+            {
+                var vierkant = 0;
+        while ( vierkant < 4)
+            {
+                if(buitenVierkant % 2 === 0)
+                    {
+                        document.write("<div class='vierkantGeel vierkant'></div>");
+                        document.write("</div> <div class='vierkantGroen vierkant'></div>")
+                    }
+                else
+                    {
+                        document.write("</div> <div class='vierkantGroen vierkant'></div>")
+                        document.write("<div class='vierkantGeel vierkant'></div>");
+                    }
+                
+                vierkant++;
+            }
+                document.write("<br>");
+                buitenVierkant++;
+            }
+        </script>
+
+   
+	</body>
+</html>
