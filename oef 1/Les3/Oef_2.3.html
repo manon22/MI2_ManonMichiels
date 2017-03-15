@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="beschrijving van de webpagina">
+    <meta name="keywords" content="trefwoorden, gescheiden, door, komma's">
+    <meta name="viewport" content="width=device-width, height=device-height" />
+    <title>Oef_2.3</title>
+    <style type="text/css">
+        .titel {
+            text-align: center;
+            line-height: 200px;
+            font-size: 1px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="inhoud">
+        <script src="../js/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript">
+            "use strict";
+            /*global $ */
+            $(function () {
+                $("#inhoud").addClass("titel");
+                $("#inhoud").html("Straten met jQuery!");
+                $("#inhoud").animate({
+                    fontSize: "90px"
+                }, 2500);
+            });
+            
+        </script>
+        
+    </div>
+</body>
+
+</html>
