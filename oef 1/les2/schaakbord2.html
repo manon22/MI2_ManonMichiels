@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="beschrijving van de webpagina">
+	<meta name="keywords" content="trefwoorden, gescheiden, door, komma's">
+	<meta name="viewport" content="width=device-width, height=device-height" />
+	<title>Schaakbord</title>
+	
+	
+	<style type="text/css">
+		body {
+			background-color: grey;
+		}
+		
+		.wit {
+			background: white;
+			margin-left: 4px;
+		}
+		
+		.zwart {
+			background: black;
+			margin-left: 4px;
+		}
+		
+		div {
+			height: 50px;
+			width: 50px;
+			display: inline-block;
+		}
+	</style>
+	
+	<script type="text/javascript">
+		var teller = 0;
+		var html = "";
+		for (var i = 0; i < 8; i++) {
+			for (var j = 0; j < 8; j++) {
+				if (teller % 2 != 0) {
+					html += "<div class='zwart'></div>";
+				}
+				else {
+					html += "<div class='wit'></div>";
+				}
+				teller +=1;
+			}
+			teller +=1;
+			html += "<br>";
+		}
+		document.write(html);
+	</script>
+	
+</head>
+
+<body> 
+</body>
+
+</html>
