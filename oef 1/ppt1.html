@@ -29,6 +29,48 @@
         invoer.waarde2 = 8;
         document.write("<br>som : " + invoer.waarde1 + invoer.waarde2+'<br>');
         document.write("som : " + (invoer.waarde1 + invoer.waarde2));
+        
+        var waarde1 = 10;
+        var waarde2 = 2;
+        if(waarde1 > 5)
+            {
+               document.write("<br> Waarde1 is groter dan 5: " +waarde1);
+            }
+        else 
+            {
+                document.write("<br> Waarde1 is kleiner dan 5: " +waarde1);
+            }
+        
+         
+        function telOp()
+        {
+            return 1500 + 200;
+        }
+        document.write("<br> De oplossing 1500 + 200 = " + telOp() );
+        
+        
+        function optellen(waarde1, waarde2)
+        {
+            return waarde1 + waarde2;
+        }
+        document.write("<br> De som is: " + optellen(2,4));
+        function aftrekken(waarde1, waarde2)
+        {
+            return waarde1 - waarde2;
+        }
+        document.write("<br> De som is: " + aftrekken(15,8));
+        
+        
+        function rekenmachine()
+        {
+            this.waarde1 = 12;
+            this.waarde2 = 4;
+        }
+        var rekenen = new rekenmachine();
+        document.write("<br> De som = " + (rekenen.waarde1 + rekenen.waarde2));
+        rekenen.waarde1 = 4;
+        rekenen.waarde2 = 5;
+        document.write("<br> De som2 = " + (rekenen.waarde1 + rekenen.waarde2));
     </script>
 </body>
 </html>
