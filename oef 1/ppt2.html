@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="nl">
+	<head>
+		<meta charset="utf-8" >
+		<meta name="description" content="beschrijving van de webpagina" >
+		<meta name="keywords" content="trefwoorden, gescheiden, door, komma's">
+        <meta name="viewport" content="width=device-width, height=device-height" />
+		<title>Oefeningen op lessen 2</title>
+
+	</head>
+
+	<body>
+        <script type="text/javascript">
+        "use strict"
+        
+        var keuze = 2
+        switch(keuze)
+            {
+                case 1 :
+                    document.write('keuze één <br> ');
+                    break;
+                case 2 :
+                    document.write('keuze twee <br>');
+                    break;
+                case 3 :
+                    document.write('keuze drie <br>');
+                    break;
+                    
+            }
+            
+            var i = 0;
+            while(i < 10)
+                {
+                    document.write('i = ' + i + '<br>');
+                    i++;
+                }
+            
+            var waarde = 5;
+            do
+            {
+                waarde = 10;
+            }
+            while (false)
+            document.write('waarde: ' + waarde + '<br>');
+            
+           
+            for( var teller=0; teller<= 20; teller++)
+                {
+                    document.write("Het kwadraad van " + teller + 'is ' + (teller * teller) + '<br>');
+                }
+            
+        
+        
+        </script>
+
+   
+	</body>
+</html>
