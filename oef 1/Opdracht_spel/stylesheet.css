@@ -1,0 +1,129 @@
+#Persoon{
+    background-image: url(Images/cart_pokemon01.gif);
+    width: 70px;
+    height: 70px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 95px;
+    left: 35%;
+    
+    
+    
+    
+}
+body{
+    margin: 0px;
+    background-color: black;
+    
+}
+article{
+    margin: 2em;
+    padding: 2em;
+    border: thin solid #999; 
+    margin-bottom: auto;
+    border-right: auto;
+    top: 10%;
+    left: 15%;
+    height: 70%;
+    width: 60%;
+    position: absolute;
+    background-image: url(Images/land.jpg);
+    
+    
+    
+    
+}
+h1{
+    font-size: 2.5em;
+    font-family:  Snell Roundhand;
+    top: 0;
+    left: 40%;
+    color: aquamarine;
+    position: absolute;
+}
+.Pokeball{
+    background-image: url(Images/pokeball.png);
+    width: 40px;
+    height: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 120px;
+    left: 55%;
+}
+
+
+#Score{
+    width: 120px;
+    height: 20px;
+    top: 0;
+    right: 150;
+    background-color: palevioletred;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    border-bottom-right-radius: 50px;
+    padding-left: 3px;
+    text-align: 3px ;
+    
+    
+}
+.Redder{
+    background-image: url(Images/redder.gif);
+    width: 70px;
+    height: 70px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    
+}
+.Vijand{
+    background-image: url(Images/cart_pokemon18.gif);
+    width: 70px;
+    height: 70px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    
+}
+ul {
+    z-index: 3;
+    font-family: serif;
+    font-style: oblique;
+    font-size: 20px;
+    
+}
+.Instructies ul{
+    top: 180px;
+    position: absolute;
+    border-style: double;
+    border-top-left-radius: 5px ;
+    border-top-right-radius: 5px ;
+    left: 14%;
+    background-color: beige;
+    background-position: center;
+    border-left-color:  palevioletred;
+    border-right-color:  palevioletred;
+    border-top-color:  aquamarine;
+    border-bottom-color:  aquamarine;
+    padding: 30px 30px 30px 60px;
+    margin: auto;
+    width: 60%;
+    display: block;
+}
+#InstructieKnop{
+    position: absolute;
+    
+    border-bottom-left-radius: 50px;
+    width: 120px;
+    height: 20px;
+    left: 93%;
+    right: 0%;
+    text-align: center;
+}
+
