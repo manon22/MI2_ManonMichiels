@@ -1,4 +1,5 @@
 
+
 var Teller = 0;
 var punten = 0;
 var hit_list_Persoon = [];
@@ -51,7 +52,7 @@ $(function () {
         //"rotate(" + hoek + "deg)"
         hit_list_Persoon = $("#Persoon").collision(".Pokeball");
         if (hit_list_Persoon.length > 0) {
-            if (Teller % 2 == 0 && Teller < 7) {
+            if (Teller % 2 == 2 && Teller < 4) {
                 $("body").append('<div class="Pokeball"> </div> ');
                 
             }
@@ -60,7 +61,7 @@ $(function () {
                 $(".Redder").remove();
             }
             redderSpawn = Math.floor((Math.random() * 100));
-                if (redderSpawn >= 75) {
+                if (redderSpawn >= 85) {
                     $("body").append('<div class="Redder"></div>');
                     spawnEnemy(".Redder");
                 }
@@ -79,7 +80,7 @@ $(function () {
                     $(".Vijand").css("background-image", "url(Images/cart_pokemon18.gif)")
                 }
                 if (enemySpawn >= 34 && enemySpawn < 66) {
-                    $(".Vijand").css("background-image", "url(Images/cart_pokemon18.gif)")
+                    $(".Vijand").css("background-image", "url(Images/enemy.gif)")
                 }
                 if (enemySpawn >= 0 && enemySpawn < 33) {
                     $(".Vijand").css("background-image", "url(Images/cart_pokemon18.gif)")
