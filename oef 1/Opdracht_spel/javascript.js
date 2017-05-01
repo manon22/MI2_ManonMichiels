@@ -1,20 +1,16 @@
 var Teller = 0;
+var TellerDiamant = 0;
 var punten = 0;
 var hit_list_Persoon = [];
 var redderSpawn = 0;
+var diamantSpawn = 0;
 var hit_list_redder = [];
+var hit_list_diamant = [];
 var enemySpawn = 0;
 var Opengeklapt = true;
 
-$(document).ready(function() {
-    $("#Start").click(function() {
-        $("#header").show();
-    });
-});
 
-
-
-
+//keybord functies
 $(function () {
     var speler = '<div id="Persoon"></div>'
         , pLeft = 0
@@ -56,8 +52,7 @@ $(function () {
            hoek = 0;
             break;
         }
-        $("#Persoon").css("transform", "rotate(" + hoek + "deg)");
-        //"rotate(" + hoek + "deg)"
+        
         hit_list_Persoon = $("#Persoon").collision(".Pokeball");
         if (hit_list_Persoon.length > 0) {
             if (Teller % 2 == 2 && Teller < 4) {
@@ -119,12 +114,34 @@ $(function () {
                 UpdateTeller();
             }
         }
+        
+       
+                
+        hit_list_diamant = $("#Persoon").collision(".Diamant");
+        if (hit_list_diamant.length > 0) {
+            TellerDiamant += 1;
+            $(".Diamant").remove();
+            }
+        
+        diamantSpawn = Math.floor((Math.random() * 100));
+                if (diamantSpawn >= 75) {
+                    $("body").append('<div class="Diamant"></div>');
+                    spawnEnemy(".Diamant");
+                }
+                $(".Vijand").css("visibility", "visible");
+                spawnEnemy(".Diamant");
+        
+            
+        
+        TellerDiamant += 1;
+        UpdateTeller();
+            
     });
 });
 
 function spawnEnemy(naam) {
-    var posx = (Math.random() * ($(document).width() - 50)).toFixed();
-    var posy = (Math.random() * ($(document).height() - 50)).toFixed();
+    var posx = (Math.random() * ($(document).width() - 30)).toFixed();
+    var posy = (Math.random() * ($(document).height() - 30)).toFixed();
     hit_list_Persoon = [];
     $(naam).each(function (i, Pokeball) {
         $(Pokeball).css({
@@ -151,7 +168,10 @@ function spawnEnemy(naam) {
 function UpdateTeller() {
     $("#Score").empty(Teller);
     $("#Score").append("Pokeballs: " + Teller);
+    $("#DiamantScore").empty(TellerDiamant);
+    $("#DiamantScore").append("Diamanten: " + TellerDiamant);
 }
+
 //$(function () {
 //    $("ul").click(function () {
 //        $(this).hide();
