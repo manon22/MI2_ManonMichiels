@@ -1,34 +1,37 @@
 #Persoon{
     background-image: url(Images/cart_pokemon01.gif);
+    background-color: ;
     width: 70px;
     height: 70px;
     background-size: cover;
     background-repeat: no-repeat;
     position: absolute;
-    top: 95px;
-    left: 35%;
+   
     
     
     
     
+}
+html{
+     height: 100%;
+    width: 100%;
 }
 body{
     margin: 0px;
     background-color: black;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    
     
 }
 article{
-    margin: 2em;
-    padding: 2em;
-    border: thin solid #999; 
-    margin-bottom: auto;
-    border-right: auto;
-    top: 10%;
-    left: 15%;
-    height: 70%;
-    width: 60%;
+    
+    
+    background-repeat: no-repeat;
+    background-size: cover;
     position: absolute;
     background-image: url(Images/land.jpg);
+    z-index: -5;
     
     
     
@@ -39,10 +42,10 @@ h1{
     font-family:  Snell Roundhand;
     top: 0;
     left: 40%;
-    color: aquamarine;
+    color: black;
     position: absolute;
 }
-.Pokeball{
+#Pokeball{
     background-image: url(Images/pokeball.png);
     width: 40px;
     height: 40px;
@@ -63,13 +66,14 @@ h1{
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
-    border-bottom-right-radius: 50px;
+    border-bottom-right-radius: 0;
     padding-left: 3px;
     text-align: 3px ;
+    font-size: 15px;
     
     
 }
-.Redder{
+#Redder{
     background-image: url(Images/redder.gif);
     width: 70px;
     height: 70px;
@@ -91,6 +95,8 @@ h1{
     left: 0px;
     
 }
+
+
 ul {
     z-index: 3;
     font-family: serif;
@@ -118,7 +124,7 @@ ul {
 }
 #InstructieKnop{
     position: absolute;
-    
+    font-size: 15px;
     border-bottom-left-radius: 50px;
     width: 120px;
     height: 20px;
@@ -126,4 +132,74 @@ ul {
     right: 0%;
     text-align: center;
 }
+#header{
+    backface-visibility: visible;
+}
+#Start{
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    
+}
+#StartKnop{
+    font-size: 25px;
+    font-family: serif;
+    color: white;
+    background-image: url(Images/starterPokemon.jpg);
+    border-color: yellow;
+    background-size: 10em;
+    top: 40%;
+    left: 20%;
+    height: 25%;
+    width: 59%;
+    opacity: 1.5;
+    display:block;
+    position: absolute;
+    border-top-left-radius: 15px ;
+    border-top-right-radius:15px ;
+    border-top-right-radius: 15px ;
+    border-bottom-left-radius: 15px ;
+    border-bottom-right-radius: 15px ;
+    
+}
+#ScoreDiamant{
+    
+    width: 120px;
+    height: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 20px;
+    left: 0px;
+    color: black;
+    background-color: white;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    border-bottom-right-radius: 50px;
+    padding-left: 3px;
+    text-align: 3px ;
+    font-size: 15px;
+}
+.Diamant{
+    background-image: url(Images/dia.gif);
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    
+}
 
+.Evolutie
+{
+    background-image: url(Images/giphy.gif);
+}
+   @media only screen and (max-width: 900px){
+    .modal-content {
+        width: 100%;
+    }
+}
