@@ -41,6 +41,40 @@ function Vijand(x, y) {
 	
 }
 
+Vijand.prototype.beweeg = function () {
+	"use strict";
+	if (this.Richting === "links") {
+		if (this.X > 0) {
+			this.links();
+		} else {
+			this.Richting = "rechts";
+			this.rechts();
+		}
+	}
+	if (this.Richting === "rechts") {
+		if (this.X < (Math.floor((window.innerWidth - 50) / 50))) {
+			this.rechts();
+		} else {
+			this.Richting = "links";
+			this.links();
+		}
+	}
+};
+Vijand.prototype.links = function () {
+	"use strict";
+	this.element.animate({
+		left: "-=2"
+	}, 1);
+	this.X -= 0.04;
+};
+Vijand.prototype.rechts = function () {
+	"use strict";
+	this.element.animate({
+		left: "+=2"
+	}, 1);
+	this.X += 0.04;
+};
+
 function test1() {
     
     
@@ -79,17 +113,35 @@ $(document).ready(function () {
     });
 });
 
+
+function spawnEnemy(naam) {
+	console.log('test');
+    var posx = (Math.random() * ($(document).width() - 50)).toFixed();
+    var posy = (Math.random() * ($(document).height() - 50)).toFixed();
+    hit_list_Persoon = [];
+    $(naam).each(function (i, Pokeball) {
+		console.log('test2');
+        $("#Pokeball").css({
+            position: 'absolute'
+            , left: ((Math.random() * ($(document).width() - 50)).toFixed()) + 'px'
+            , top: ((Math.random() * ($(document).height() - 50)).toFixed()) + 'px'
+        });
+    });
+}
+
 //keyboard functies
 document.onkeydown = function (e) {
     //var positie = $("#Persoon").position();
     var hoek;
     switch (e.keyCode) {
+	
     case 37: //links
         if (pLeft > 0) {
             pLeft -= 10;
             $("#Persoon").css('left', pLeft + 'px');
         }
         hoek = 0;
+		check();
         break;
     case 38: //boven
         if (pTop > 0) {
@@ -97,6 +149,7 @@ document.onkeydown = function (e) {
             $("#Persoon").css('top', pTop + 'px');
         }
         hoek = 0;
+			check();
         break;
     case 39: //rechts
         if (pLeft < (veldWidth - playerWidth)) {
@@ -104,6 +157,7 @@ document.onkeydown = function (e) {
             $("#Persoon").css('left', pLeft + 'px');
         }
         hoek = 0;
+			check();
         break;
     case 40: //onder
         if (pTop < (veldHeight - playerHeight)) {
@@ -111,12 +165,30 @@ document.onkeydown = function (e) {
             $("#Persoon").css('top', pTop + 'px');
         }
         hoek = 0;
+			check();
         break;
+
     }
    
+    hit_list_Persoon = $("#Persoon").collision("#Pokeball");
     
-     veldHeight = $('article').height();
+    veldHeight = $('article').height();
     veldWidth = $('article').width();
     playerHeight = $("#Persoon").height();
     playerWidth = $("#Persoon").width();
+    
+    
+
+};
+function check() {
+	
+	if (hit_list_Persoon.length > 0){
+		
+		spawnEnemy("#Pokeball");
+		
+		
+	}
+	
+	
+	
 }
