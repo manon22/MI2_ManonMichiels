@@ -40,10 +40,11 @@ article{
 h1{
     font-size: 2.5em;
     font-family:  Snell Roundhand;
-    top: 0;
-    left: 40%;
+    width: 20%;
     color: black;
-    position: absolute;
+    position: relative;
+    margin: auto;
+    display: block;
 }
 #Pokeball{
     background-image: url(Images/pokeball.png);
@@ -128,9 +129,9 @@ ul {
     border-bottom-left-radius: 50px;
     width: 120px;
     height: 20px;
-    left: 93%;
-    right: 0%;
     text-align: center;
+    top: 0;
+    right: 0;
 }
 #header{
     backface-visibility: visible;
