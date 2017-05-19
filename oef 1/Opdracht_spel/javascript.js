@@ -1,6 +1,5 @@
 var Teller = 0;
 var TellerDiamant = 0;
-var punten = 0;
 var redderSpawn = 0;
 var diamantSpawn = 0;
 var enemySpawn = 0;
@@ -15,6 +14,8 @@ var PlayerH = ((window.innerHeight) - (articelH * 70)) / 2;
 var speler = '<div id="Persoon"></div>';
 var pLeft = 0;
 var pTop = 0;
+var EW,EH = 0;
+var MaxVijand = 5;
 
 var veldHeight;
 var veldWidth;
@@ -26,19 +27,28 @@ var test = $('.Vijand');
 var Vijanden = [];
 var x, y;
 var X, Y;
-var article = $("article");
+var article = document.getElementsByTagName("article");
 
 function Vijand(x, y) {
     "use strict";
 	this.element = $('<div/>', {
 		class: "Vijand"
 	});
-	this.x = X;
-	this.y = Y;
-	this.element.css('left', X);
-	this.element.css('bottom', Y);
+	this.X = x;
+	this.Y = y;
+	this.element.css('left', x);
+	this.element.css('top', y);
 	this.element.appendTo(article);
+    this.Richting ="rechts";
 	
+}
+function beweeg() {
+	"use strict";
+	//console.log('loopt door');
+	var i;
+	for (i = 0; i < Vijanden.length; i += 1) {
+		Vijanden[i].beweeg();
+	}
 }
 
 Vijand.prototype.beweeg = function () {
@@ -52,7 +62,7 @@ Vijand.prototype.beweeg = function () {
 		}
 	}
 	if (this.Richting === "rechts") {
-		if (this.X < (Math.floor((window.innerWidth - 50) / 50))) {
+		if (this.X < (Math.floor(window.innerWidth - 100))) {
 			this.rechts();
 		} else {
 			this.Richting = "links";
@@ -60,25 +70,30 @@ Vijand.prototype.beweeg = function () {
 		}
 	}
 };
+
 Vijand.prototype.links = function () {
 	"use strict";
 	this.element.animate({
-		left: "-=2"
+		left: "-=20"
 	}, 1);
-	this.X -= 0.04;
+	this.X -= 20;
 };
 Vijand.prototype.rechts = function () {
 	"use strict";
 	this.element.animate({
-		left: "+=2"
+		left: "+=20"
 	}, 1);
-	this.X += 0.04;
+	this.X += 20;
 };
 
 function test1() {
+    if (Vijanden.length < MaxVijand){
+         EW = Math.floor(Math.random() * window.innerWidth);
+        EH = Math.floor(Math.random() * window.innerHeight);
+        Vijanden.push(new Vijand(EW, EH));
+        //$('h1').show(0);
+    }
     
-    
-    Vijanden.push(new Vijand(pTop, pLeft)); 
 }
 
 $(function () {
@@ -90,6 +105,8 @@ $(function () {
     $('article').css('left', PlayerW);
     $('article').css('top', PlayerH);
     test1();
+    setInterval(test1, 2000);
+    setInterval(beweeg, 100);
   
     
 });
@@ -98,8 +115,11 @@ $(document).ready(function () {
     $("#StartKnop").click(function () {
        $("body").load("index.html");
     });
-    $("button").click(function () {
+    $(article).click(function () {
         $("ul").hide(1000);
+        $('h1').hide(0);
+       
+        
     });
     $("#InstructieKnop").click(function () {
         if (!Opengeklapt) {
@@ -116,15 +136,15 @@ $(document).ready(function () {
 
 function spawnEnemy(naam) {
 	console.log('test');
-    var posx = (Math.random() * ($(document).width() - 50)).toFixed();
-    var posy = (Math.random() * ($(document).height() - 50)).toFixed();
+    var posx = Math.floor(Math.random() * window.innerWidth - 100);
+    var posy = Math.floor(Math.random() * window.innerHeight - 100);
     hit_list_Persoon = [];
     $(naam).each(function (i, Pokeball) {
 		console.log('test2');
         $("#Pokeball").css({
             position: 'absolute'
-            , left: ((Math.random() * ($(document).width() - 50)).toFixed()) + 'px'
-            , top: ((Math.random() * ($(document).height() - 50)).toFixed()) + 'px'
+            , left: posx + 'px'
+            , top: posy + 'px'
         });
     });
 }
@@ -185,10 +205,15 @@ function check() {
 	if (hit_list_Persoon.length > 0){
 		
 		spawnEnemy("#Pokeball");
-		
-		
+        Teller += 1;
+        document.getElementById('Score').innerHTML = 'Pokeballs: ' + Teller;
+        
+        
+
 	}
-	
-	
-	
+
+
 }
+	
+	
+	
