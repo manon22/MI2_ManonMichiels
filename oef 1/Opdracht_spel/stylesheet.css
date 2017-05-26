@@ -30,7 +30,7 @@ article{
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
-    background-image: url(Images/land.jpg);
+    background-image: url(Images/world.jpg);
     z-index: -5;
     
     
@@ -39,9 +39,10 @@ article{
 }
 h1{
     font-size: 2.5em;
-    font-family:  Snell Roundhand;
+    font: italic bold 42px/30px Courier, monospace;
     width: 20%;
-    color: black;
+    top: 20px;
+    color: crimson;
     position: relative;
     margin: auto;
     display: block;
@@ -59,6 +60,7 @@ h1{
 
 
 #Score{
+    
     width: 120px;
     height: 20px;
     top: 0;
@@ -69,24 +71,16 @@ h1{
     position: absolute;
     border-bottom-right-radius: 0;
     padding-left: 3px;
-    text-align: 3px ;
+    text-align: center ;
     font-size: 15px;
+    font-size: 15px;
+    border-bottom-right-radius: 50px;
     
     
 }
-#Redder{
-    background-image: url(Images/redder.gif);
-    width: 70px;
-    height: 70px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    
-}
+
 .Vijand{
-    background-image: url(Images/cart_pokemon18.gif);
+    background-image: url(Images/enemy.gif);
     width: 70px;
     height: 70px;
     background-size: contain;
@@ -101,12 +95,12 @@ h1{
 ul {
     z-index: 3;
     font-family: serif;
-    font-style: oblique;
-    font-size: 20px;
+    font-style: normal;
+    font-size: 1em;
     
 }
 .Instructies ul{
-    top: 180px;
+    top: 170px;
     position: absolute;
     border-style: double;
     border-top-left-radius: 5px ;
@@ -122,7 +116,9 @@ ul {
     margin: auto;
     width: 60%;
     display: block;
+    
 }
+
 #InstructieKnop{
     position: absolute;
     font-size: 15px;
@@ -136,28 +132,43 @@ ul {
 #header{
     backface-visibility: visible;
 }
-#Start{
+
+
+
+#end{
     background-color: black;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
     position: absolute;
+    background-image: url(Images/Over.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+    
+    
     
 }
-#StartKnop{
-    font-size: 25px;
+
+
+#endKnop{
+    
     font-family: serif;
-    color: white;
-    background-image: url(Images/starterPokemon.jpg);
-    border-color: yellow;
-    background-size: 10em;
-    top: 40%;
-    left: 20%;
-    height: 25%;
-    width: 59%;
+    color: black;
+    font-size-adjust: auto;
+    text-decoration-line: underline;
+    background-color: aliceblue;
+    border-color: orange;
+    font-size: 1em;
+    font-size-adjust: auto;
+    top: 63%;
+    left: 42%;
+    height: 9%;
+    width: 15%;
+    
     opacity: 1.5;
-    display:block;
+    display: block;
     position: absolute;
     border-top-left-radius: 15px ;
     border-top-right-radius:15px ;
@@ -165,39 +176,61 @@ ul {
     border-bottom-left-radius: 15px ;
     border-bottom-right-radius: 15px ;
     
-}
-#ScoreDiamant{
     
-    width: 120px;
-    height: 30px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: absolute;
-    top: 20px;
-    left: 0px;
-    color: black;
-    background-color: white;
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: absolute;
-    border-bottom-right-radius: 50px;
-    padding-left: 3px;
-    text-align: 3px ;
-    font-size: 15px;
-}
-.Diamant{
-    background-image: url(Images/dia.gif);
-    width: 30px;
-    height: 30px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: absolute;
+    
     
 }
 
-.Evolutie
-{
-    background-image: url(Images/giphy.gif);
+p.pp{
+    text-align: center;
+    color: aqua;
+    font-size: 1.3em;
+    
+}
+#Pijla{
+    background-image: url(Images/pijlOnder.png);
+    background-color: ;
+    width: 60px;
+    height: 60px;
+    top: 90%;
+    left: 47%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+#Pijlb{
+    background-image: url(Images/pijlBoven.png);
+    background-color: ;
+    width: 60px;
+    height: 60px;
+    top: 79%;
+    left: 47%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    
+}
+#Pijlc{
+    background-image: url(Images/pijlRechts.png);
+    background-color: ;
+    width: 60px;
+    height: 60px;
+    top: 85%;
+    left: 59%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+#Pijld{
+    background-image: url(Images/pijlLinks.png);
+    background-color: ;
+    width: 60px;
+    height: 60px;
+    top: 85%;
+    left: 36%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
 }
    @media only screen and (max-width: 900px){
     .modal-content {
