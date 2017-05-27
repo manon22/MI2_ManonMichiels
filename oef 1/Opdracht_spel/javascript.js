@@ -171,16 +171,16 @@ $(function () {
 // bij endknop herstart het spel -- ul verdwijnt bij het klikken -- instructieknop/ul komt tevoorschijn
 $(document).ready(function () {
 	"use strict";
-	$("#endKnop").click(function () {
+	$("#endKnop").on("click touch", function () {
 		$("body").load("index.html");
 	});
-	$(article).click(function () {
+	$(article).on("click touch", function () {
 		$("ul").hide(1000);
 		$('h1').hide(0);
 		clearInterval(bwg);
 		bwg = setInterval(beweeg, 100);
 	});
-	$("#InstructieKnop").click(function () {
+	$("#InstructieKnop").on ("click touch", function () {
 		if (!Opengeklapt) {
 			$("ul").show();
 			Opengeklapt = true;
